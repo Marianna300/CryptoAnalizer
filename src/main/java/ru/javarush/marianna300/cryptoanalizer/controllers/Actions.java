@@ -2,12 +2,12 @@ package ru.javarush.marianna300.cryptoanalizer.controllers;
 
 import ru.javarush.marianna300.cryptoanalizer.AppException;
 import ru.javarush.marianna300.cryptoanalizer.commands.Action;
-import ru.javarush.marianna300.cryptoanalizer.commands.Decoder;
-import ru.javarush.marianna300.cryptoanalizer.commands.Encoder;
+import ru.javarush.marianna300.cryptoanalizer.commands.Decrypt;
+import ru.javarush.marianna300.cryptoanalizer.commands.Encrypt;
 
 public enum Actions {
-    ENCODE(new Encoder()),
-    DECODE(new Decoder());
+    DECRYPT(new Decrypt()),
+    ENCRYPT(new Encrypt());
 
     private final Action action;
 
