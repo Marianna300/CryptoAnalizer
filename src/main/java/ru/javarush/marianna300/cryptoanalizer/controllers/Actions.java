@@ -1,13 +1,17 @@
 package ru.javarush.marianna300.cryptoanalizer.controllers;
 
 import ru.javarush.marianna300.cryptoanalizer.AppException;
-import ru.javarush.marianna300.cryptoanalizer.commands.Action;
-import ru.javarush.marianna300.cryptoanalizer.commands.Decrypt;
-import ru.javarush.marianna300.cryptoanalizer.commands.Encrypt;
+import ru.javarush.marianna300.cryptoanalizer.commands.*;
 
 public enum Actions {
     DECRYPT(new Decrypt()),
-    ENCRYPT(new Encrypt());
+    ENCRYPT(new Encrypt()),
+    BRUTFORCE(new Brutforce()),
+    ANALIZER(new Analizer());
+
+
+
+
 
     private final Action action;
 
