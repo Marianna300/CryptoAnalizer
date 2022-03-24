@@ -9,10 +9,6 @@ public enum Actions {
     BRUTFORCE(new Brutforce()),
     ANALIZER(new Analizer());
 
-
-
-
-
     private final Action action;
 
     Actions(Action action) {

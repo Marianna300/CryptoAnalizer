@@ -2,8 +2,13 @@ package ru.javarush.marianna300.cryptoanalizer.commands;
 
 import ru.javarush.marianna300.cryptoanalizer.enpty.Result;
 import ru.javarush.marianna300.cryptoanalizer.enpty.ResultCode;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
-import static ru.javarush.marianna300.cryptoanalizer.constans.Constans.ALPHABET;
 
 //  На входе - адрес зашифрованного файла
 //             адрес файла с текстом который является примером текста что был зашифрован (или частота использования букв)
@@ -21,6 +26,13 @@ import static ru.javarush.marianna300.cryptoanalizer.constans.Constans.ALPHABET;
 // используя этот сдвиг.
 
 public class Analizer implements Action{
+
+    @Override
+    public Result execute(String[] parameters) {
+        final String inputFileName = parameters[0];
+        final String outputFileName = parameters[1];
+        final String inputStatFileName = parameters[2];
+
     try (BufferedWriter writer = new BufferedWriter(new FileWriter(inputFileName))){
 
         List<String> inputData = Files.readAllLines(Path.of(inputFileName));
@@ -91,9 +103,6 @@ public class Analizer implements Action{
     }
 
 
-    @Override
-
-    public Result execute(String[] parameters) {
         return new Result("текст расшифрован", ResultCode.OK);
     }
 }
