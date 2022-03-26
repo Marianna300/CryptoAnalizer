@@ -7,7 +7,7 @@ public enum Actions {
     DECRYPT(new Decrypt()),
     ENCRYPT(new Encrypt()),
     BRUTFORCE(new Brutforce()),
-    ANALIZER(new Analizer());
+    ANALIZER(new Analyzer());
 
     private final Action action;
 

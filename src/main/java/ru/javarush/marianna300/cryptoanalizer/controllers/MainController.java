@@ -7,6 +7,5 @@ public class MainController {
     public Result doAction(String actionName, String[] parameters){
         Action action = Actions.find(actionName);
         return ((Action) action).execute(parameters);
-
     }
 }
