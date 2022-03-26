@@ -91,6 +91,3 @@ public class Runner {
         return mode;
     }
 }
-  // int key = 3;
-   // String text = "Привет";
-   // String result = ".......";
