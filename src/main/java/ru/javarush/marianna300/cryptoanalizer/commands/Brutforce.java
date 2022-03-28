@@ -13,6 +13,6 @@ public class Brutforce implements Action {
 
 
 
-        return new Result("текст расшифрован", ResultCode.OK);
+        return new Result("the text is decoded", ResultCode.OK);
     }
 }

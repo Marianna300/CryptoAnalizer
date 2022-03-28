@@ -4,9 +4,6 @@ import ru.javarush.marianna300.cryptoanalizer.enpty.Result;
 
 import java.util.Scanner;
 
-//Не забудьте проделать проверку того что а) файл оригинала по заданному адресу существует,
-// и б) ключ от 0 и до (размер алфавита - 1) (или можете взять остаток от деления на размер алфавита).
-//акже нужно, чтобы программа завершала работу по желанию пользователя (например, вводом слова “exit”).
 
 public class Runner {
     public static void main(String[] args) {
@@ -17,38 +14,38 @@ public class Runner {
     }
     public static final String[][][] QUESTIONS = new String[][][] {
             {
-                    {"ENCRYPT"},
-                    {"Исходный файл (полный путь или имя файла)"},
-                    {"Куда сохранить результат(полный путь или имя файла)"},
-                    {"Веведите ключ"},
+                    {"Encrypt"},
+                    {"File to encrypt"},
+                    {"Choose the directory to save the file"},
+                    {"Enter the key"},
             },
             {
-                    {"DECRYPT"},
-                    {"Исходный файл (полный путь или имя файла)"},
-                    {"Куда сохранить результат(полный путь или имя файла"},
-                    {"Веведите ключ"},
+                    {"Decrypt"},
+                    {"File to decrypt"},
+                    {"Choose the directory to save the file"},
+                    {"Enter the key"},
             },
             {
-                    {"BRUTFORCE"},
-                    {"Исходный файл (полный путь или имя файла)"},
-                    {"Куда сохранить результат(полный путь или имя файла"},
-                    {"Файл-словарь (полный путь или имя файла)"}
+                    {"Bruteforce"},
+                    {"File to bruteforce"},
+                    {"Choose the directory to save the file"},
+                    {"Dictionary file"}
             },
             {
-                    {"ANALIZER"},
-                    {"Исходный файл (полный путь или имя файла)"},
-                    {"Куда сохранить результат(полный путь или имя файла"}
+                    {"Analyzer"},
+                    {"File to analyzer"},
+                    {"Choose the directory to save the file"}
             },
     };
     public static final String MODE = """
-            Что вы хотите сделать?
-            1. Зашифровать
-            2. Расшифровать
-            3. Брутфорс
-            4. Статистический анализ
+            What are you gonna do?
+            1. Encrypt
+            2. Decipher the text
+            3. Hack with bruteforce
+            4. Hack with statistical analysis
             """;
 
-    public static final String INCORRECT = "Неправильный выбор";
+    public static final String INCORRECT = "incorrect data entered";
 
     private static String[] getArgs(String[] args){
         if (args.length == 0){

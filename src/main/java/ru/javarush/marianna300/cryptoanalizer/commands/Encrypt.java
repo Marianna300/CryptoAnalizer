@@ -29,6 +29,6 @@ public class Encrypt implements Action {
         } catch (IOException fileNotFoundException) {
             fileNotFoundException.printStackTrace();
         }
-        return new Result("текст зашифрован", ResultCode.OK);
+        return new Result("the text is encrypted", ResultCode.OK);
     }
 }

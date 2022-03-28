@@ -29,6 +29,6 @@ public class Analyzer implements Action {
         } catch (IOException fileNotFoundException) {
             fileNotFoundException.printStackTrace();
         }
-        return new Result("текст проанализирован", ResultCode.OK);
+        return new Result("the text is decoded", ResultCode.OK);
     }
 }

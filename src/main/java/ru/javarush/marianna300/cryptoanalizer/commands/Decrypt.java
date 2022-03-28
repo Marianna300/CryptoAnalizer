@@ -29,6 +29,6 @@ public class Decrypt implements Action {
         } catch (IOException fileNotFoundException) {
             fileNotFoundException.printStackTrace();
         }
-        return new Result("текст расшифрован", ResultCode.OK);
+        return new Result("the text is decoded", ResultCode.OK);
     }
 }

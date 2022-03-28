@@ -10,10 +10,11 @@ public class CaesarCipher {
     private static final char FIRST_LETTER = 'а';
     private static final char LAST_LETTER = 'я';
     private static final int ALPHABET_SIZE = LAST_LETTER - FIRST_LETTER + 1;
+    //источник https://ru.wikipedia.org/wiki/%D0%A7%D0%B0%D1%81%D1%82%D0%BE%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C
     public static final double[] RUSSIAN_LETTERS_PROBABILITIES = {
-            0.0801, 0.0159, 0.0454, 0.0170, 0.0298, 0.0845, 0.0094, 0.0165, 0.0735,
-            0.0121, 0.0349, 0.0440, 0.0321, 0.0670, 0.1097, 0.0281, 0.0473, 0.0547, 0.0626, 0.0262, 0.0026,
-            0.0097, 0.0048, 0.0144, 0.0073, 0.0036, 0.0004, 0.0190, 0.0174, 0.0032, 0.0064, 0.0201
+            0.0801, 0.0159, 0.0454, 0.0170, 0.0298, 0.0845, 0.0094, 0.0165, 0.0735, 0.0121, 0.0349,
+            0.0440, 0.0321, 0.0670, 0.1097, 0.0281, 0.0473, 0.0547, 0.0626, 0.0262, 0.0026, 0.0097,
+            0.0048, 0.0144, 0.0073, 0.0036, 0.0004, 0.0190, 0.0174, 0.0032, 0.0064, 0.0201
     };
 
     public String cipher(String message, int offset) {
@@ -61,7 +62,6 @@ public class CaesarCipher {
     }
 
     private long countLetter(char letter, String message) {
-        System.out.println("letter = " + letter);
         return message.chars()
                 .filter(character -> character == letter)
                 .count();
@@ -77,7 +77,6 @@ public class CaesarCipher {
         int probableOffset = 0;
         for (int offset = 0; offset < chiSquares.length; offset++) {
             double tmp = chiSquares[offset];
-            System.out.println(String.format("Chi-Square for offset %d: %.2f", offset, tmp));
             if (chiSquares[offset] < chiSquares[probableOffset]) {
                 probableOffset = offset;
             }
